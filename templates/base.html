@@ -1,0 +1,81 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ysfdmr.com</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    </head>
+<body>
+
+<div id="container">
+    <div id="top">
+        <div class="slogan">Yusuf DEMİR ~ blog </div>
+    </div>
+    <div id="menu">
+        {% if not is_logged_in %}
+            {% if is_superuser %}
+                <a href="/admin/">*ADMIN*</a>
+            {% endif %}
+            <a href="/index/">{% trans "HOME" %}</a>
+            <a href="/info/">{% trans "INFO" %}</a>
+            <a href="/contact/">{% trans "CONTACT" %}</a>
+
+        {% endif %}
+    </div>
+    <div id="cat_sabit">
+        <div id="categories">
+        <span class="boxheader">
+            {% trans "Categories" %}
+        </span>
+            <hr>
+            {% for i in cat %}
+                <a href="/cat/{{ i.id }}" >{{ i }}</a>
+                <br>
+            {% endfor %}
+
+        </div>
+
+        <div id="loginbox">
+
+            {% if not user.is_authenticated %}
+                {% trans "Welcome Guest" %}<br><br>
+                <a href="/register/">{% trans "Sing up" %}</a>
+                <a href="/login/">{% trans "Sing in" %}</a>
+            {% else %}
+                  {% trans "Welcome" %}<br>
+                  {% if user.first_name == "" %}
+                    {{ user.email }}
+                    <br><br>
+                    <a href="/profile/"> {% trans "Create a New Profile" %}</a>
+                  {% else %}
+                    {{ user.first_name }}
+                  {% endif %}
+                    <br>
+
+                    <a href="/mypost/">{% trans "My Post" %}</a>
+                    <a href="/sendpost/">{% trans "Send Post" %}</a>
+                    <a href="/profile/">{% trans "Profile" %}</a>
+                    <a href="/logout/">{% trans "Logout" %}</a>
+          {% endif %}
+        </div>
+    </div>
+    <div id="contents">
+
+
+
+        {% block Content %}
+        {% endblock %}
+    </div>
+    {% block Footer %}
+        <div style="clear: both;"></div>
+        <div id="footer">
+
+            footer
+
+        </div>
+    {% endblock %}
+
+</div>
+</body>
+</html>

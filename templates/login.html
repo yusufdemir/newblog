@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block page %}Index{% endblock %}
+{% load url from future %}
+{% block Content %}
+    <div id="content">
+
+        {% if form.errors %}
+            <p>{% trans "Your username and password didn't match. Please try again." %}</p>
+        {% endif %}
+
+        <form action="." method="post">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ next }}" />
+          {{ form.non_field_errors }}
+          {% for field in form %}
+            <div class="field-wrapper">
+              <div class="label-wrapper">
+                {% if field.name == "username" %}
+                  Email address
+                {% else %}
+                  {{ field.label_tag }}
+                {% endif %}
+                {% if field.field.required %}<span class="required">*</span>{% endif %}
+              </div>
+              <div class="value-wrapper">
+                {{ field }}
+                {{ field.errors }}
+              </div>
+            </div>
+          {% endfor %}
+          <div class="submit-wrapper">
+            <input type="submit" value="Sign In" />
+          </div>
+        </form>
+
+    </div>
+{% endblock %}

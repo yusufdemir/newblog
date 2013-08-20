@@ -4,6 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 import os
+import djcelery
 _parent = lambda x: os.path.normpath(os.path.join(x, '..'))
 PROJECT_DIR = _parent(os.path.dirname(__file__))
 
@@ -128,6 +129,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'post',
     'account',
+    'djcelery',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -160,8 +162,25 @@ LOGGING = {
 }
 
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 AUTHENTICATION_BACKENDS = ('account.backend.EmailLogin',)
+AUTH_USER_EMAIL_UNIQUE = True
+AUTH_PROFILE_MODULE = 'accounts.Profile'
 
 LOGIN_REDIRECT_URL = '/index/'
-AUTH_PROFILE_MODULE = 'accounts.Profile'
 LOGIN_URL = '/login/'
+
+#app 'djcelery',
+
+# email sett.
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 25
+
+
+# celery sett.
+djcelery.setup_loader()
+BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+CELERY_IMPORTS = ("task",)

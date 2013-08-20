@@ -11,7 +11,7 @@ class RegisterForm(UserCreationForm):
         fields = ('username', 'email',)
 
     def clean_email(self):
-        email = self.cleaned_data('email')
+        email = self.cleaned_data['email']
         try:
             user = User.objects.get(email=email)
             raise forms.ValidationError(ugettext('This email address already exists. Did you forget your password?'))
@@ -22,7 +22,7 @@ class RegisterForm(UserCreationForm):
         user = super(UserCreationForm, self).save(commit=False)
         user.set_password(self.cleaned_data["password1"])
         user.email = self.cleaned_data["email"]
-        user.is_active = False
+        user.is_active = True
         if commit:
             user.save()
 

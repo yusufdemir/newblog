@@ -5,6 +5,7 @@
       <w>clickjacking</w>
       <w>csrf</w>
       <w>django's</w>
+      <w>djcelery</w>
       <w>middleware</w>
       <w>sqlite</w>
       <w>wsgi</w>

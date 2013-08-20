@@ -1,6 +1,8 @@
 # Create your views here.
+from AptUrl.Helpers import _
 from random import choice
 from string import letters
+from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -16,8 +18,9 @@ def register(request):
         form = RegisterForm(data)
 
         if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('index.html')
+            user = form.save()
+            messages.success(request, _("Registration Succes."))
+            return HttpResponseRedirect('/index/')
     else:
         form = RegisterForm()
 

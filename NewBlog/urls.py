@@ -7,12 +7,13 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-
     url(r'^$', 'post.views.index', name='home'),
-    url(r'^index/$', 'post.views.index', name='home'),
+    url(r'^index/$', 'post.views.index', name='index'),
     url(r'^register/', 'account.views.register', name='RegistrationForm'),
+    #url(r'^sendpost/', 'post.views.sendPost', name='sendPostForm'),
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/index/'}),
+
 
 
 

@@ -23,6 +23,7 @@ class Comments(models.Model):
     content_type = models.ForeignKey(ContentType)
     object_id = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
+
     item = generic.GenericForeignKey('Content_type', 'Object_id')
 
     def __unicode__(self):
@@ -40,8 +41,10 @@ class Posts(models.Model):
     text = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     visible = models.BooleanField(default=True)
-    comments = generic.GenericRelation(Comments)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    comments = generic.GenericRelation(Comments)
+
 
     def __unicode__(self):
         return self.title

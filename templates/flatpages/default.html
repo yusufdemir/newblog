@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block page %}Index{% endblock %}
+
+{% block Content %}
+
+
+    <div id="sayfa">
+        {{ flatpage.title }}
+        <br />
+        {{ flatpage.content }}
+    </div>
+
+{% endblock %}

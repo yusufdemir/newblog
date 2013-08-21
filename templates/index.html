@@ -3,12 +3,29 @@
 {% block page %}Index{% endblock %}
 
 {% block Content %}
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-   Content
+    {% for p in posts reversed %}
+        <div id="content">
+            <div class="title">
+                <a href="/detail/{{ p.id }}" >{{ p.title }}</a>
+                {% if user.is_authenticated %}
+                    <span class="edit">
+                        <a href="/comment-add/{{ p.id }}">
+                            <img src="/static/graphic/comment.png" width="16" height="16">
+                        </a>
+
+                        <a href="/post-edit/{{ p.id }}">
+                            {% if p.user_id == user.id %}
+                                <img src="/static/graphic/comment2.png" width="16" height="16">
+                            {% endif %}
+                        </a>
+                    </span>
+                {% endif %}
+            </div>
+            <div class="text">
+                {{ p.text }}
+            </div>
+        <br>
+        </div>
+    {% endfor %}
+
 {% endblock %}

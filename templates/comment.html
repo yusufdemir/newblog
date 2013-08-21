@@ -1,0 +1,21 @@
+{% load i18n %}
+    {%  for subcomment in subcomments.get_sub %}
+        <div id="comments">
+            <div class="title">
+                {{ subcomment.title }}
+            {% if user.is_authenticated %}
+                <span class="edit">
+                    {{ subcomment.mail }} -/-
+                    <a href="/subcomment-edit/{{ subcomments.id }}">
+                        {% if subcomment.mail == user.email %}
+                            <img src="/static/graphic/comment2.png" width="16" height="16">
+                        {% endif %}
+                    </a>
+                </span>
+            {% endif %}
+            </div>
+            <div class="text">
+                {{ subcomment.text }}
+            </div>
+        </div>
+    {% endfor %}

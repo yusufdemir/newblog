@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block page %}Index{% endblock %}
+
+{% block Content %}
+    {% for p in posts reversed %}
+        <div id="content">
+            <div class="title">
+                <a href="/detail/{{ p.id }}" >{{ p.title }}</a>
+                {% if user.is_authenticated %}
+                    <span class="edit">
+                        <a href="/comment-add/{{ p.id }}">
+                            <img src="/static/graphic/comment.png" width="16" height="16">
+                        </a>
+
+                        <a href="/post-edit/{{ p.id }}">
+                            {% if p.user_id == user.id %}
+                                <img src="/static/graphic/comment2.png" width="16" height="16">
+                            {% endif %}
+                        </a>
+                    </span>
+                {% endif %}
+            </div>
+            <div class="text">
+                {{ p.text }}
+            </div>
+        <br>
+
+                 {% for subcomments in p.comments.all %}
+                     <div id="comment">
+                        <div class="title">
+                            {{ subcomments.title }}
+                            {% if user.is_authenticated %}
+                                <span class="edit">
+                                    <a href="/subcomment-add/{{ subcomments.id }}">
+                                        <img src="/static/graphic/comment.png" width="16" height="16">
+                                    </a>
+
+                                    <a href="/comment-edit/{{ subcomments.id }}">
+                                        {% if subcomment.mail == user.email %}
+                                            <img src="/static/graphic/comment2.png" width="16" height="16">
+                                        {% endif %}
+                                    </a>
+                                </span>
+                            {% endif %}
+                        </div>
+                        <div class="text">
+                            {{ subcomments.text }}
+                        </div>
+
+                 {% if subcomments.get_sub %}
+                    {% include "comment.html" %}
+                 {% endif %}
+</div>
+                 {% endfor %}
+
+        </div>
+    {% endfor %}
+
+{% endblock %}

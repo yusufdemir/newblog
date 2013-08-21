@@ -164,6 +164,19 @@ LOGGING = {
 }
 
 
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.contrib.messages.context_processors.messages",
+    'post.context_processors.categories',
+)
+
+
+
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
@@ -186,3 +199,5 @@ EMAIL_PORT = 25
 djcelery.setup_loader()
 BROKER_URL = 'amqp://guest:guest@localhost:5672/'
 CELERY_IMPORTS = ("task",)
+
+

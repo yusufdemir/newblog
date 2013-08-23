@@ -3,6 +3,29 @@
 {% block page %}Index{% endblock %}
 
 {% block Content %}
+
+    #####TEST#####<br>
+    {% for comment in rootComments %}
+        {{ comment.title }}<br>
+        {{ comment.content_type_id }}<br>
+
+        {% for sub in subComments %}
+            {% if comment.id == sub.object_id  %}
+                {{ sub.title }}<br>
+                {% with 'subcomments.html' as file %}
+                    {% with sub as parent %}
+                        {% include file %}
+                    {% endwith %}
+                {% endwith %}
+            {% endif %}
+        {% endfor %}
+        -----------------------<br>
+    {% endfor %}
+
+
+
+
+
     {% for p in posts reversed %}
         <div id="content">
             <div class="title">

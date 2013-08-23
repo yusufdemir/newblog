@@ -20,10 +20,12 @@ class Comments(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     validation_key = models.CharField(max_length=30)
     validation = models.BooleanField(default=False)
-    content_type = models.ForeignKey(ContentType)
-    object_id = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+
+    post_id = models.PositiveIntegerField()
+    content_type = models.ForeignKey(ContentType)
+    object_id = models.PositiveIntegerField()
     item = generic.GenericForeignKey('Content_type', 'Object_id')
 
     def __unicode__(self):
@@ -42,7 +44,6 @@ class Posts(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     visible = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
-
     comments = generic.GenericRelation(Comments)
 
 

@@ -1,16 +1,25 @@
 {% load i18n %}
 
-running --> <br>
-
         {% for sub in subComments %}
             {% if parent.id == sub.object_id  %}
-                {{ sub.title }}<br>
-                {% with 'subcomments.html' as file %}
-                    {% with sub as parent %}
-                        {% include file %}
+
+                <div id="comments">
+                    <div class="title">
+                        {{ sub.title }}
+                    </div>
+                    <div class="text">
+                        {{ sub.text }}
+                    </div>
+
+
+                    {% with 'subcomments.html' as file %}
+                        {% with sub as parent %}
+                            {% include file %}
+                        {% endwith %}
                     {% endwith %}
-                {% endwith %}
+                </div>
             {% endif %}
+
         {% endfor %}
 
 

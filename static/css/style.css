@@ -204,16 +204,18 @@ body{
 }
 
 #comments{
-     width: 530px;
-     min-height: 40px;
-     background-color: lightgray;
-     border-radius: 5px;
-     margin:10px 0 5px 25px;
-     font-size: 11px;
-     clear: both;
-     padding:5px 10px 5px 10px;
-     color: black;
- }
+    min-width:100px;
+    min-height: 40px;
+    position:relative;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin:10px 0 5px 25px;
+    font-size: 11px;
+    clear: both;
+    padding:5px 10px 5px 10px;
+    color: black;
+    border: 1px solid white;
+}
 
 #comments .title {
      font-size: 13px;

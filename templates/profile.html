@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block Content %}
+
+    <div id ="content">
+            <form method="post" action="/profile/">
+                {% csrf_token %}
+                    {{ formUser.as_p }}
+                    {{ formProfile.as_p }}
+                <input type="submit" value="gönder">
+            </form>
+    </div>
+{% endblock %}

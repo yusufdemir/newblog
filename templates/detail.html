@@ -4,44 +4,6 @@
 
 {% block Content %}
 
-    #####TEST#####<br>
-    {% for comment in rootComments %}
-        <div id="comment">
-            <div class="title">
-                {{ comment.title }} root
-            </div>
-            <div class="text">
-                {{ comment.text }}
-            </div>
-
-
-            {% for sub in subComments %}
-                {% if comment.id == sub.object_id  %}
-
-                    <div id="comments">
-                        <div class="title">
-                            {{ sub.title }}
-                        </div>
-                        <div class="text">
-                            {{ sub.text }}
-                        </div>
-
-
-                        {% with 'subcomments.html' as file %}
-                            {% with sub as parent %}
-                                {% include file %}
-                            {% endwith %}
-                        {% endwith %}
-                     </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    {% endfor %}
-
-
-
-
-
     {% for p in posts reversed %}
         <div id="content">
             <div class="title">
@@ -52,7 +14,7 @@
             </div>
 
             {% for comment in rootComments %}
-                <div id="comments">
+                <div id="comment">
                     <div class="title">
                         {{ comment.title }} root
                     </div>
@@ -64,7 +26,7 @@
                     {% for sub in subComments %}
                         {% if comment.id == sub.object_id  %}
 
-                            <div id="comments">
+                            <div id="comment">
                                 <div class="title">
                                     {{ sub.title }}
                                 </div>

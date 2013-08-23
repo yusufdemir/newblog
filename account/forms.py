@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm, User
 from django import forms
 from django.utils.translation import ugettext
+from account.models import UserProfile
 
 
 class RegisterForm(UserCreationForm):
@@ -27,3 +28,13 @@ class RegisterForm(UserCreationForm):
             user.save()
 
         return user
+
+
+
+
+
+class userProfileForm(forms.ModelForm):
+
+    class Meta:
+        model = UserProfile
+        fields = ['image', 'phone', 'job']

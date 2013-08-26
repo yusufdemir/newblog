@@ -18,7 +18,7 @@ def index(request):
 def postDetailView(request, post_id):
 
     posts = Posts.objects.filter(pk=post_id)
-    comments=Comments.objects.filter(post_id=post_id)
+    comments = Comments.objects.filter(post_id=post_id)
 
     rootComments=comments.filter(content_type_id=ContentType.objects.get_for_model(Posts))
     subComments = comments.filter(content_type_id=ContentType.objects.get_for_model(Comments))

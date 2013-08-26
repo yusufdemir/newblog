@@ -1,7 +1,9 @@
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
+from django.conf.urls.static import static
 from django.contrib import admin
+from NewBlog import settings
 
 admin.autodiscover()
 
@@ -23,3 +25,8 @@ urlpatterns = patterns(
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )
+
+
+urlpatterns += patterns('',
+    # ... the rest of your URLconf goes here ...
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

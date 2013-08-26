@@ -29,7 +29,9 @@ class UserProfile(models.Model):
     # user profile photo
     image = models.ImageField(_("Profile Pic"),
                               upload_to="photo/",
-                              default="photo/None/no-img.jpg")
+                              null=True,
+                              blank=True
+                              )
 
     def __unicode__(self):
         return "%s Details" % self.user

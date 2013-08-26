@@ -49,9 +49,9 @@
                     <br><br>
                     <a href="/profile/"> {% trans "Create a New Profile" %}</a>
                   {% else %}
-                    {{ user.first_name }}
+                    {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}
                   {% endif %}
-                    <br>
+                    <br><br>
 
                     <a href="/mypost/">{% trans "My Post" %}</a>
                     <a href="/sendpost/">{% trans "Send Post" %}</a>

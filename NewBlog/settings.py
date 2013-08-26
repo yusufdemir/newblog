@@ -7,7 +7,6 @@ import os
 import djcelery
 _parent = lambda x: os.path.normpath(os.path.join(x, '..'))
 PROJECT_DIR = _parent(os.path.dirname(__file__))
-
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -54,12 +53,12 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'photo')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/photo/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -197,7 +196,7 @@ EMAIL_PORT = 25
 
 # celery sett.
 djcelery.setup_loader()
-BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+BROKER_URL = 'amqp://yusuf:asdasd@localhost:5672/blogsv'
 CELERY_IMPORTS = ("task",)
 
 

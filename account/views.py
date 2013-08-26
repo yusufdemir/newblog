@@ -10,6 +10,8 @@ from django.shortcuts import render_to_response, render, redirect
 from django.template import RequestContext
 from account.models import UserProfile
 from forms import RegisterForm, ProfileForm, UserForm
+from celery import task
+from task import resize_post_image
 
 
 def register(request):
@@ -42,12 +44,16 @@ def getProfile(request):
         profile_form = ProfileForm(request.POST,
                                    request.FILES,
                                    instance=profile)
-
+        import ipdb
+        ipdb.set_trace()
         user_form = UserForm(request.POST,
                              instance=request.user)
         if profile_form.is_valid() and user_form.is_valid():
             profile_form.save()
             user_form.save()
+
+            resize_post_image.delay(profile_form.save())
+
             messages.success(request, _("Profile updated succesfully."))
             return redirect('index')
     else:

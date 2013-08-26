@@ -30,11 +30,19 @@ class RegisterForm(UserCreationForm):
         return user
 
 
-
-
-
-class userProfileForm(forms.ModelForm):
-
+class ProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['image', 'phone', 'job']
+        fields = ('image', 'gender')
+
+
+class UserForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(UserForm, self).__init__(*args, **kwargs)
+        # set first_name and last_name as required field, in default not req.
+        self.fields['first_name'].required = True
+        self.fields['last_name'].required = True
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name')

@@ -13,7 +13,7 @@ urlpatterns = patterns(
     #url(r'^sendpost/', 'post.views.sendPost', name='sendPostForm'),
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/index/'}),
-    url(r'^profile/$','account.views.profileFormView'),
+    url(r'^profile/$','account.views.getProfile'),
 
     url(r'^detail/(?P<post_id>\d+)/$', 'post.views.postDetailView'),
     url(r'^cat/(?P<cat_id>\d+)/$','post.views.catView'),

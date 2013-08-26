@@ -6,9 +6,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response, render
+from django.shortcuts import render_to_response, render, redirect
 from django.template import RequestContext
-from forms import RegisterForm, userProfileForm
+from account.models import UserProfile
+from forms import RegisterForm, ProfileForm, UserForm
 
 
 def register(request):
@@ -33,7 +34,7 @@ def register(request):
 @login_required
 def profileFormView(request):
     if request.method == 'POST':
-        form = userProfileForm(request.POST)
+        form = ProfileForm(request.POST)
         if form.is_valid():
             form.save(commit=False)
             userprofile_id=request.user.id
@@ -42,7 +43,37 @@ def profileFormView(request):
 
                                   context_instance=RequestContext(request))
 
-    formProfile = userProfileForm(initial={'phone':request.user.id})
+    formProfile = ProfileForm(initial={'phone':request.user.id})
 
 
     return render(request, "profile.html", {'formProfile': formProfile})
+
+
+@login_required()
+def getProfile(request):
+    # get user profile
+    user = request.user
+    profile = user.get_profile()
+
+
+    if request.method == 'POST':
+        profile_form = ProfileForm(request.POST,
+                                   request.FILES,
+                                   instance=profile)
+
+        user_form = UserForm(request.POST,
+                             instance=request.user)
+        if profile_form.is_valid() and user_form.is_valid():
+            profile_form.save()
+            user_form.save()
+            messages.success(request, _("Profile updated succesfully."))
+            return redirect('update_profile')
+    else:
+        profile_form = ProfileForm(instance=profile)
+        user_form = UserForm(instance=request.user)
+
+    return render(request, 'profile.html', {
+        'profile_form': profile_form,
+        'user_form': user_form
+    })
+

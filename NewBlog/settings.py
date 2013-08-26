@@ -176,13 +176,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 
-
+USE_I18N = True
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = ('account.backend.EmailLogin',)
 AUTH_USER_EMAIL_UNIQUE = True
-AUTH_PROFILE_MODULE = 'accounts.Profile'
+AUTH_PROFILE_MODULE = 'account.UserProfile'
 
 LOGIN_REDIRECT_URL = '/index/'
 LOGIN_URL = '/login/'

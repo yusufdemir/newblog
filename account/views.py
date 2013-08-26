@@ -33,7 +33,7 @@ def register(request):
                               context_instance=RequestContext(request))
 
 
-@login_required()
+@login_required
 def getProfile(request):
     # get user profile
     user = request.user
@@ -44,8 +44,7 @@ def getProfile(request):
         profile_form = ProfileForm(request.POST,
                                    request.FILES,
                                    instance=profile)
-        import ipdb
-        ipdb.set_trace()
+
         user_form = UserForm(request.POST,
                              instance=request.user)
         if profile_form.is_valid() and user_form.is_valid():

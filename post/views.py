@@ -1,6 +1,9 @@
 # Create your views here.
-from django.shortcuts import render_to_response, render
+from AptUrl.Helpers import _
+from django.contrib import messages
+from django.shortcuts import render_to_response, render, redirect
 from django.template import RequestContext
+from post.forms import postForm
 from post.models import *
 
 
@@ -34,3 +37,21 @@ def catView(request, cat_id):
         'posts': post
     }
     return render(request, 'index.html', ctx)
+
+
+def sendPost(request):
+    user=request.user
+    profile = user.get_profile()
+
+    if request.method == 'POST':
+        form=postForm(instance=user)
+
+        if form.is_valid():
+            form.save()
+
+            messages.success(request, _("Send Post Succesfuly."))
+            return redirect('detail')
+
+    else:
+        form=postForm
+    return render(request,'detail.html',{'form': form})

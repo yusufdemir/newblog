@@ -46,6 +46,5 @@ class Posts(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     comments = generic.GenericRelation(Comments)
 
-
     def __unicode__(self):
         return self.title

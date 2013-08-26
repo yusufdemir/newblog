@@ -34,7 +34,7 @@ class UserProfile(models.Model):
                               )
 
     def __unicode__(self):
-        return "%s Details" % self.user
+        return "%s Details" % self.email
 
     def activate(self):  #activate user
         self.activate = True

@@ -45,8 +45,16 @@
                     {% endfor %}
                 </div>
             {% endfor %}
-
-
+            <!-- Send Comment -->
+            <div id="comments">
+                <form method="post" action="/sendpost/">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value="Send Post">
+                </form>
+            </div>
+            <!-- Send Comment -->
+        <div style="clear: both"></div>
         </div>
     {% endfor %}
 

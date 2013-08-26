@@ -4,7 +4,7 @@
 {% block Content %}
 
     <div id ="content">
-            <form method="post" action="/profile/">
+            <form method="post" action="/profile/" enctype="multipart/form-data">
                 {% csrf_token %}
                     {{ formUser.as_p }}
                     {{ formProfile.as_p }}

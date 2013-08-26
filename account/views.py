@@ -31,24 +31,6 @@ def register(request):
                               context_instance=RequestContext(request))
 
 
-@login_required
-def profileFormView(request):
-    if request.method == 'POST':
-        form = ProfileForm(request.POST)
-        if form.is_valid():
-            form.save(commit=False)
-            userprofile_id=request.user.id
-            return HttpResponseRedirect('/profile/')
-        return render_to_response("profile.html", {'form': form},
-
-                                  context_instance=RequestContext(request))
-
-    formProfile = ProfileForm(initial={'phone':request.user.id})
-
-
-    return render(request, "profile.html", {'formProfile': formProfile})
-
-
 @login_required()
 def getProfile(request):
     # get user profile
@@ -67,13 +49,13 @@ def getProfile(request):
             profile_form.save()
             user_form.save()
             messages.success(request, _("Profile updated succesfully."))
-            return redirect('update_profile')
+            return redirect('index')
     else:
         profile_form = ProfileForm(instance=profile)
         user_form = UserForm(instance=request.user)
 
     return render(request, 'profile.html', {
-        'profile_form': profile_form,
-        'user_form': user_form
+        'formProfile': profile_form,
+        'formUser': user_form
     })
 

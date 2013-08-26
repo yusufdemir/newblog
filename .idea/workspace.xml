@@ -11,7 +11,7 @@
     <file path="/base.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377258558718" ignored="false" />
     <file path="/index.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377065679985" ignored="false" />
     <file path="/urls.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377494792870" ignored="false" />
-    <file path="/views.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377498542843" ignored="false" />
+    <file path="/views.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377499117102" ignored="false" />
     <file path="/forms.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377496374700" ignored="false" />
     <file path="$USER_HOME$/projects/blog/account/forms.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1376995830546" ignored="false" />
     <file path="/admin.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1376997112445" ignored="false" />
@@ -22,7 +22,7 @@
     <file path="$PROJECT_DIR$/templates/flatpages/default.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377089127924" ignored="false" />
     <file path="/subcomments.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377257416443" ignored="false" />
     <file path="/style.css" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377257394912" ignored="false" />
-    <file path="/profile.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377261450991" ignored="false" />
+    <file path="/profile.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377499285319" ignored="false" />
     <file path="/a.dummy" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377496997950" ignored="false" />
     <file path="$PROJECT_DIR$/../blog/account/views.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377260614170" ignored="false" />
     <file path="$PROJECT_DIR$/../blog/post/forms.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377260635431" ignored="false" />
@@ -75,7 +75,7 @@
             <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/account/views.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state line="55" column="14" selection-start="1758" selection-end="1776" vertical-scroll-proportion="0.53958">
+                  <state line="32" column="0" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.273021">
                     <folding>
                       <element signature="e#26#54#0" expanded="true" />
                     </folding>
@@ -112,10 +112,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NewBlog/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="189" column="16" selection-start="6232" selection-end="6232" vertical-scroll-proportion="0.93660533">
+            <state line="189" column="16" selection-start="6232" selection-end="6232" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -162,10 +162,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="42" selection-start="255" selection-end="255" vertical-scroll-proportion="-5.625">
+            <state line="13" column="14" selection-start="384" selection-end="384" vertical-scroll-proportion="0.41935483">
               <folding />
             </state>
           </provider>
@@ -191,11 +191,11 @@
         <option value="$PROJECT_DIR$/templates/subcomments.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/account/backend.py" />
-        <option value="$PROJECT_DIR$/templates/profile.html" />
         <option value="$PROJECT_DIR$/NewBlog/urls.py" />
         <option value="$PROJECT_DIR$/NewBlog/settings.py" />
         <option value="$PROJECT_DIR$/account/forms.py" />
         <option value="$PROJECT_DIR$/account/models.py" />
+        <option value="$PROJECT_DIR$/templates/profile.html" />
         <option value="$PROJECT_DIR$/account/views.py" />
       </list>
     </option>
@@ -683,13 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="42" selection-start="255" selection-end="255" vertical-scroll-proportion="-5.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="29" selection-start="899" selection-end="899" vertical-scroll-proportion="-6.642857">
@@ -708,7 +701,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NewBlog/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="16" selection-start="6232" selection-end="6232" vertical-scroll-proportion="0.93660533">
+        <state line="189" column="16" selection-start="6232" selection-end="6232" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -722,9 +715,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="14" selection-start="384" selection-end="384" vertical-scroll-proportion="0.41935483">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/account/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="14" selection-start="1758" selection-end="1776" vertical-scroll-proportion="0.53958">
+        <state line="32" column="0" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.273021">
           <folding>
             <element signature="e#26#54#0" expanded="true" />
           </folding>

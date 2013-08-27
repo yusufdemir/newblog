@@ -2,7 +2,7 @@ import PIL
 from celery import task
 from NewBlog import settings
 from PIL import Image
-
+from django.core.mail import send_mail
 
 @task
 def resize_post_image(post):
@@ -23,3 +23,11 @@ def resize_post_image(post):
     image = image.resize(size, PIL.Image.ANTIALIAS)
     image.save(image_path)
     return True
+
+
+@task
+def sendUserActivationMail(userid):
+    if userid:
+        message = """ / """
+        send_mail('Subject here', message, 'from@example.com',
+    ['to@example.com'], fail_silently=False)

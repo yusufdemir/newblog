@@ -45,11 +45,21 @@
                     {% endfor %}
                 </div>
             {% endfor %}
+
             <!-- Send Comment -->
-            <div id="comments">
-                <form method="post" action="/sendpost/">
+            <div id="comments" style="text-align: right;">
+                <form method="post" action="/send-post-comment/">
                     {% csrf_token %}
-                    {{ form }}
+                    {% if user.is_authenticated %}
+                        <input type="text" name="username" value="{{ user.first_name }}" style="display: none;"><br>
+                        <input type="text" name="mail" value="{{ user.email }}" style="display: none;"><br>
+                    {% else %}
+                        Username :<input type="text" name="username"><br>
+                        E-mail : <input type="text" name="mail"><br>
+                    {% endif %}
+                    Title : <input type="text" name="title"><br>
+                    Comment Text: <textarea name="text"></textarea><br>
+                    <input hidden="postid" value="{{ id }}">
                     <input type="submit" value="Send Post">
                 </form>
             </div>

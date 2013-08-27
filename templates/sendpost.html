@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block page %}Index{% endblock %}
+{% load url from future %}
+{% block Content %}
+    <div id="content">
+        <form action="." method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}" />
+            {{ form.non_field_errors }}
+            {{ form.as_p }}
+            <div class="submit-wrapper">
+                <input type="submit" value="Sign In" />
+            </div>
+        </form>
+
+    </div>
+{% endblock %}

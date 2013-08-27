@@ -4,13 +4,9 @@ from random import choice
 from string import letters
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response, render, redirect
-from django.template import RequestContext
-from account.models import UserProfile
+from django.shortcuts import  render, redirect
 from forms import RegisterForm, ProfileForm, UserForm
-from celery import task
 from task import resize_post_image
 
 
@@ -29,8 +25,7 @@ def register(request):
     else:
         form = RegisterForm()
 
-    return render_to_response('login.html', {'form': form},
-                              context_instance=RequestContext(request))
+    return render(request, 'login.html', {'form': form})
 
 
 @login_required
@@ -38,7 +33,6 @@ def getProfile(request):
     # get user profile
     user = request.user
     profile = user.get_profile()
-
 
     if request.method == 'POST':
         profile_form = ProfileForm(request.POST,

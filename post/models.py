@@ -22,7 +22,6 @@ class Comments(models.Model):
     validation = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
-
     post_id = models.PositiveIntegerField()
     content_type = models.ForeignKey(ContentType)
     object_id = models.PositiveIntegerField()
@@ -31,10 +30,11 @@ class Comments(models.Model):
     def __unicode__(self):
         return u'Comment: %s' % self.title
 
+"""
     def get_sub(self):
         return Comments.objects.filter(object_id=self.id,
                                        content_type=ContentType.objects.get_for_model(self))
-
+"""
 
 class Posts(models.Model):
     user = models.ForeignKey(User)

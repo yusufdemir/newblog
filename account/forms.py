@@ -24,6 +24,7 @@ class RegisterForm(UserCreationForm):
         user.set_password(self.cleaned_data["password1"])
         user.email = self.cleaned_data["email"]
         user.is_active = True
+
         if commit:
             user.save()
 
@@ -39,7 +40,7 @@ class ProfileForm(forms.ModelForm):
 class UserForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(UserForm, self).__init__(*args, **kwargs)
-        # set first_name and last_name as required field, in default not req.
+        # not required
         self.fields['first_name'].required = True
         self.fields['last_name'].required = True
 

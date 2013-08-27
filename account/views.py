@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import  render, redirect
 from forms import RegisterForm, ProfileForm, UserForm
-from task import resize_post_image
+from task import resize_post_image, sendUserActivationMail
 
 
 def register(request):
@@ -19,7 +19,7 @@ def register(request):
         form = RegisterForm(data)
 
         if form.is_valid():
-            user = form.save()
+            form.save()
             messages.success(request, _("Registration Success. Please Sing In"))
             return HttpResponseRedirect('/index/')
     else:
@@ -42,11 +42,11 @@ def getProfile(request):
         user_form = UserForm(request.POST,
                              instance=request.user)
         if profile_form.is_valid() and user_form.is_valid():
+
             profile_form.save()
             user_form.save()
 
             resize_post_image.delay(profile_form.save())
-
             messages.success(request, _("Profile updated succesfully."))
             return redirect('index')
     else:

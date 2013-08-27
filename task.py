@@ -19,15 +19,22 @@ def resize_post_image(post):
     if image.mode not in ("L", "RGB"):
         image = image.convert("RGB")
 
-    size=(200,200)
+    size = (200, 200)
     image = image.resize(size, PIL.Image.ANTIALIAS)
     image.save(image_path)
     return True
 
 
 @task
-def sendUserActivationMail(userid):
-    if userid:
-        message = """ / """
-        send_mail('Subject here', message, 'from@example.com',
-    ['to@example.com'], fail_silently=False)
+def sendUserActivationMail(UserData):
+    #test ***
+    userMail=UserData.mail
+    userKey=UserData.key
+    if userMail & userKey:
+        message = 'test -'+userKey
+        fromMail = 'yusuf.demir@markafoni.com'
+        to = userMail
+        send_mail('Blog Activation', message, fromMail,
+                  [to], fail_silently=False)
+        return True
+    return True

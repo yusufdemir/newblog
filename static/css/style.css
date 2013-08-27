@@ -269,3 +269,16 @@ body{
  .boxheader{
      color:white;text-align: center;display: block; font-size: 15px;
  }
+
+ .profileimage{width: 625px;
+     background: white;
+     text-align: center;
+     float:left;
+ }
+
+ .profileimage img {border: 1px solid black;}
+
+ .form{width: 625px;
+    float: left;
+     text-align: left;
+ }

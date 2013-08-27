@@ -4,10 +4,10 @@
 {% block Content %}
 
     <div id ="content">
-    o <img src="
-    {% if formProfile.instance.image %}
-    {{ formProfile.instance.image.url }}
-    {% endif %}"> -
+        <span class="profileimage">
+            <img src="{% if formProfile.instance.image %} {{ formProfile.instance.image.url }} {% endif %}">
+        </span>
+        <div class="form">
             <form method="post" action="/profile/" enctype="multipart/form-data">
                 {% csrf_token %}
 
@@ -15,5 +15,7 @@
                     {{ formProfile.as_p }}
                 <input type="submit" value="gönder">
             </form>
+        </div>
+        <div style="clear: both"></div>
     </div>
 {% endblock %}

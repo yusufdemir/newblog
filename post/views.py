@@ -39,6 +39,14 @@ def catView(request, cat_id):
     return render(request, 'index.html', ctx)
 
 
+def mypost(request):
+    post = Posts.objects.filter(user__pk =request.user.id)
+    ctx = {
+        'post': post
+    }
+    return render(request, 'index.html', ctx)
+
+
 @login_required
 def sendPost(request):
     if request.method == 'POST':

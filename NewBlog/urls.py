@@ -17,6 +17,7 @@ urlpatterns = patterns(
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/index/'}),
     url(r'^profile/$','account.views.getProfile'),
     url(r'^send-post/$', 'post.views.sendPost', name='sendPost'),
+    url(r'^mypost/$', 'post.views.mypost', name='mypost'),
     url(r'^detail/(?P<post_id>\d+)/$', 'post.views.postDetailView', name='detail'),
     url(r'^cat/(?P<cat_id>\d+)/$','post.views.catView'),
 

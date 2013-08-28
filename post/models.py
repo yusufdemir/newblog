@@ -26,7 +26,7 @@ class Comment(models.Model):
     post_id = models.PositiveIntegerField()
     content_type = models.ForeignKey(ContentType)
     object_id = models.PositiveIntegerField()
-    item = generic.GenericForeignKey('Content_type', 'Object_id')
+    content = generic.GenericForeignKey('Content_type', 'Object_id')
 
     def __unicode__(self):
         return u'Comment: %s' % self.title

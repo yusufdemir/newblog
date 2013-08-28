@@ -1,0 +1,71 @@
+{% extends "base/base.html" %}
+{% load i18n %}
+{% block page %}Index{% endblock %}
+
+{% block Content %}
+
+    {% for p in posts reversed %}
+        <div id="content">
+            <div class="title">
+                <a href="/detail/{{ p.id }}" >{{ p.title }}</a>
+            </div>
+            <div class="text">
+                {{ p.text }}
+            </div>
+
+            {% for comment in rootComments %}
+                <div id="comment">
+                    <div class="title">
+                        {{ comment.title }} root
+                    </div>
+                    <div class="text">
+                        {{ comment.text }}
+                    </div>
+
+
+                    {% for sub in subComments %}
+                        {% if comment.id == sub.object_id  %}
+
+                            <div id="comment">
+                                <div class="title">
+                                    {{ sub.title }}
+                                </div>
+                                <div class="text">
+                                    {{ sub.text }}
+                                </div>
+
+
+                                {% with 'post/subcomments.html' as file %}
+                                    {% with sub as parent %}
+                                        {% include file %}
+                                    {% endwith %}
+                                {% endwith %}
+                             </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+
+            <!-- Send Comment -->
+            <div id="comments" style="text-align: right;">
+                <form method="post" action="/send-post-comment/">
+                    {% csrf_token %}
+                    {% if user.is_authenticated %}
+                        <input type="text" name="username" value="{{ user.first_name }}" style="display: none;"><br>
+                        <input type="text" name="mail" value="{{ user.email }}" style="display: none;"><br>
+                    {% else %}
+                        Username :<input type="text" name="username"><br>
+                        E-mail : <input type="text" name="mail"><br>
+                    {% endif %}
+                    Title : <input type="text" name="title"><br>
+                    Comment Text: <textarea name="text"></textarea><br>
+                    <input hidden="postid" value="{{ id }}">
+                    <input type="submit" value="Send Post">
+                </form>
+            </div>
+            <!-- Send Comment -->
+        <div style="clear: both"></div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

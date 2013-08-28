@@ -5,12 +5,12 @@ from django.utils.translation import ugettext
 from post.models import *
 
 
-class postForm(forms.ModelForm):
+class PostForm(forms.ModelForm):
     class Meta:
-        model = Posts
+        model = Post
         fields = ('cat','title','text')
 
 
-class commentForm(forms.Form):
+class CommentForm(forms.Form):
     class Meta:
-        model = Comments
+        model = Comment

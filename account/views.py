@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import  render, redirect
 from forms import RegisterForm, ProfileForm, UserForm
-from task import resize_post_image, sendUserActivationMail
+from tasks import resize_post_image, sendUserActivationMail
 
 
 def register(request):
@@ -25,7 +25,7 @@ def register(request):
     else:
         form = RegisterForm()
 
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'account/login.html', {'form': form})
 
 
 @login_required
@@ -53,7 +53,7 @@ def getProfile(request):
         profile_form = ProfileForm(instance=profile)
         user_form = UserForm(instance=request.user)
 
-    return render(request, 'profile.html', {
+    return render(request, 'account/profile.html', {
         'formProfile': profile_form,
         'formUser': user_form
     })

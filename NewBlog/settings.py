@@ -197,6 +197,6 @@ EMAIL_PORT = 25
 # celery sett.
 djcelery.setup_loader()
 BROKER_URL = 'amqp://yusuf:asdasd@localhost:5672/blogsv'
-CELERY_IMPORTS = ("task",)
+CELERY_IMPORTS = ("tasks",)
 
 

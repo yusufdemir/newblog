@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+{% load i18n %}
+
+{% block Content %}
+
+    <div id ="content">
+        <span class="profileimage">
+            <img src="{% if formProfile.instance.image %} {{ formProfile.instance.image.url }} {% endif %}">
+        </span>
+        <div class="form">
+            <form method="post" action="/profile/" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                    {{ formUser.as_p }}
+                    {{ formProfile.as_p }}
+                <input type="submit" value="gönder">
+            </form>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+{% endblock %}

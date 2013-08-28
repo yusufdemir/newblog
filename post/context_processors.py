@@ -1,4 +1,4 @@
-from post.models import Categories
+from post.models import Category
 def categories(request):
-    cat = Categories.objects.all()
+    cat = Category.objects.all()
     return {'cat': cat}

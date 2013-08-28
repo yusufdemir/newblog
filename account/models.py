@@ -8,13 +8,10 @@ from django.db.models.signals import post_save
 class UserProfile(models.Model):
     # user
     user = models.OneToOneField(User)
-
     # activate True False
     activate = models.BooleanField(default=False)
-
     # activation key
     activation_key = models.CharField(max_length=30, null=True)
-
     # gender
     GENDER_CHOICES = (
         ('M', _('Male')),
@@ -24,8 +21,6 @@ class UserProfile(models.Model):
                               choices=GENDER_CHOICES,
                               null=True,
                               blank=True)
-
-
     # user profile photo
     image = models.ImageField(_("Profile Pic"),
                               upload_to="photo/",
@@ -36,7 +31,8 @@ class UserProfile(models.Model):
     def __unicode__(self):
         return "%s Details" % self.email
 
-    def activate(self):  #activate user
+    #activate user
+    def activate(self):
         self.activate = True
         self.save()
         return self.activate
@@ -46,10 +42,9 @@ def create_user_profile(sender, instance, created, **kwargs):
     """
     import ipdb
     ipdb.set_trace()
-    n = next
-    c = contnio
     """
     if created:
         created = UserProfile.objects.get_or_create(user=instance)
 
+# auto create new user blank profile row
 post_save.connect(create_user_profile, sender=User)

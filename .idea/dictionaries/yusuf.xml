@@ -7,7 +7,9 @@
       <w>django's</w>
       <w>djcelery</w>
       <w>endif</w>
+      <w>ipdb</w>
       <w>middleware</w>
+      <w>mypost</w>
       <w>sendpost</w>
       <w>sqlite</w>
       <w>succesfully</w>

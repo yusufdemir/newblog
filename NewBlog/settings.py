@@ -32,11 +32,11 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Istanbul'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'tr-tr'
 
 SITE_ID = 1
 
@@ -113,7 +113,7 @@ ROOT_URLCONF = 'NewBlog.urls'
 WSGI_APPLICATION = 'NewBlog.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), '..', 'templates').replace('\\', '/'),
+    os.path.join(PROJECT_DIR, '..', 'templates').replace('\\', '/'),
 )
 
 INSTALLED_APPS = (

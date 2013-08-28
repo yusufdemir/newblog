@@ -1,0 +1,7 @@
+*.pyc
+*~
+*.DS_Store
+media/upload/profile/*
+media/upload/post/*
+photo/
+.idea

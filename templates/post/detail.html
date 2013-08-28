@@ -4,13 +4,13 @@
 
 {% block Content %}
 
-    {% for p in posts reversed %}
+
         <div id="content">
             <div class="title">
-                <a href="/detail/{{ p.id }}" >{{ p.title }}</a>
+                <a href="/detail/{{ posts.id }}" >{{ posts.title }}</a>
             </div>
             <div class="text">
-                {{ p.text }}
+                {{ posts.text }}
             </div>
 
             {% for comment in rootComments %}
@@ -66,6 +66,6 @@
             <!-- Send Comment -->
         <div style="clear: both"></div>
         </div>
-    {% endfor %}
+
 
 {% endblock %}

@@ -4,25 +4,25 @@
     <list default="true" id="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" name="Default" comment="" />
     <ignored path="NewBlog.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/settings.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377672291443" ignored="false" />
+    <file path="/settings.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377673240849" ignored="false" />
     <file path="/backend.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377258733960" ignored="false" />
     <file path="$USER_HOME$/projects/blog/ydblog/settings.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1376911095492" ignored="false" />
     <file path="/models.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377672004695" ignored="false" />
     <file path="/base.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377499737192" ignored="false" />
     <file path="/index.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377065679985" ignored="false" />
     <file path="/urls.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377669723564" ignored="false" />
-    <file path="/views.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377671512909" ignored="false" />
+    <file path="/views.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377673179000" ignored="false" />
     <file path="/forms.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377670500742" ignored="false" />
     <file path="$USER_HOME$/projects/blog/account/forms.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1376995830546" ignored="false" />
     <file path="/admin.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377669962863" ignored="false" />
     <file path="$USER_HOME$/projects/blog/templates/comment.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377066623454" ignored="false" />
-    <file path="/detail.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377668030995" ignored="false" />
+    <file path="/detail.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377673444303" ignored="false" />
     <file path="/comment.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377067495315" ignored="false" />
     <file path="/context_processors.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377669931379" ignored="false" />
     <file path="/subcomments.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377668042862" ignored="false" />
     <file path="/style.css" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377592387108" ignored="false" />
     <file path="/profile.html" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377592248200" ignored="false" />
-    <file path="/a.dummy" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377670736736" ignored="false" />
+    <file path="/a.dummy" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377673171795" ignored="false" />
     <file path="$PROJECT_DIR$/../blog/account/views.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377260614170" ignored="false" />
     <file path="$PROJECT_DIR$/../blog/post/forms.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377260635431" ignored="false" />
     <file path="$PROJECT_DIR$/../blog/account/forms.py" changelist="b42e6219-3db0-4b3b-81f4-9c3ac6fe4908" time="1377491304325" ignored="false" />
@@ -61,11 +61,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NewBlog/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="22" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.28">
+            <state line="29" column="0" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/post/detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="0" selection-start="104" selection-end="104" vertical-scroll-proportion="0.23219815">
+              <folding>
+                <element signature="n#style#0;n#input#0;n#form#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#form#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/post/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="28" selection-start="484" selection-end="484" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#26#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,7 +106,6 @@
         <option value="$PROJECT_DIR$/templates/account/register.html" />
         <option value="$PROJECT_DIR$/templates/flatpages/default.html" />
         <option value="$PROJECT_DIR$/templates/post/sendpost.html" />
-        <option value="$PROJECT_DIR$/templates/post/detail.html" />
         <option value="$PROJECT_DIR$/templates/post/subcomments.html" />
         <option value="$PROJECT_DIR$/account/urls.py" />
         <option value="$PROJECT_DIR$/post/urls.py" />
@@ -93,9 +115,10 @@
         <option value="$PROJECT_DIR$/post/admin.py" />
         <option value="$PROJECT_DIR$/account/models.py" />
         <option value="$PROJECT_DIR$/post/forms.py" />
-        <option value="$PROJECT_DIR$/post/views.py" />
         <option value="$PROJECT_DIR$/post/models.py" />
+        <option value="$PROJECT_DIR$/post/views.py" />
         <option value="$PROJECT_DIR$/NewBlog/settings.py" />
+        <option value="$PROJECT_DIR$/templates/post/detail.html" />
       </list>
     </option>
   </component>
@@ -163,6 +186,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="newblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewBlog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewBlog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="post" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -518,15 +573,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/account/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="472" selection-end="472" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NewBlog/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="18" selection-start="338" selection-end="338" vertical-scroll-proportion="0.3466872">
@@ -608,15 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/post/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="15" selection-start="1157" selection-end="1157" vertical-scroll-proportion="-6.25">
-          <folding>
-            <element signature="e#26#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="0" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0">
@@ -631,10 +668,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/post/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="28" selection-start="484" selection-end="484" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#26#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NewBlog/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="22" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.28">
+        <state line="29" column="0" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/post/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="104" selection-end="104" vertical-scroll-proportion="0.23219815">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#form#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

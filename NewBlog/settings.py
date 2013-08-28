@@ -113,7 +113,7 @@ ROOT_URLCONF = 'NewBlog.urls'
 WSGI_APPLICATION = 'NewBlog.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_DIR, '..', 'templates').replace('\\', '/'),
+    os.path.join(os.path.dirname(__file__), '..', 'templates').replace('\\', '/'),
 )
 
 INSTALLED_APPS = (
